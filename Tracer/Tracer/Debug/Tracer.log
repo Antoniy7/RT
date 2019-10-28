@@ -1,0 +1,34 @@
+﻿  main.cpp
+c:\users\antoniy\source\repos\tracer\tracer\sphere.hpp(25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\antoniy\source\repos\tracer\tracer\sphere.hpp(37): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+c:\users\antoniy\source\repos\tracer\tracer\sphere.hpp(47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\antoniy\source\repos\tracer\tracer\sphere.hpp(50): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\antoniy\source\repos\tracer\tracer\object_list.hpp(25): warning C4018: '<': signed/unsigned mismatch
+c:\users\antoniy\source\repos\tracer\tracer\main.cpp(13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\antoniy\source\repos\tracer\tracer\main.cpp(20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\antoniy\source\repos\tracer\tracer\main.cpp(31): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\antoniy\source\repos\tracer\tracer\main.cpp(78): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\antoniy\source\repos\tracer\tracer\main.cpp(79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\antoniy\source\repos\tracer\tracer\main.cpp(79): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+  c:\users\antoniy\source\repos\tracer\tracer\main.cpp(38): note: see reference to function template instantiation 'std::unique_ptr<Sphere,std::default_delete<_Ty>> std::make_unique<Sphere,Vec3,double,0>(Vec3 &&,double &&)' being compiled
+          with
+          [
+              _Ty=Sphere
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  c:\users\antoniy\source\repos\tracer\tracer\main.cpp(39): note: see reference to function template instantiation 'std::unique_ptr<Sphere,std::default_delete<_Ty>> std::make_unique<Sphere,Vec3,int,0>(Vec3 &&,int &&)' being compiled
+          with
+          [
+              _Ty=Sphere
+          ]
+c:\users\antoniy\source\repos\tracer\tracer\sphere.hpp(54): warning C4715: 'Sphere::Hit': not all control paths return a value
+  Tracer.vcxproj -> C:\Users\Antoniy\source\repos\Tracer\Debug\Tracer.exe

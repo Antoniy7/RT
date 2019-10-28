@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="camera.hpp" />
     <ClInclude Include="object.hpp" />
     <ClInclude Include="Object_List.hpp" />
     <ClInclude Include="ray.hpp" />
@@ -124,9 +125,6 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="vec3.cpp" />
-    <ClCompile Include="working_1.cpp" />
-    <ClCompile Include="working_2.cpp" />
-    <ClCompile Include="working_3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

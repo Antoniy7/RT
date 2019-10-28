@@ -25,13 +25,22 @@ public:
 	inline float operator [] (int index)const { return elem[index]; }
 	inline float& operator[](int index) { return elem[index]; }
 
-	inline Vec3& operator+=(const Vec3& v);
+	inline Vec3& operator+=(const Vec3& v) {
+		elem[0] += v.x();
+		elem[1] += v.y();
+		elem[2] += v.z();
+		return *this;
+	
+	}
 	inline Vec3& operator-=(const Vec3& v);
 	inline Vec3& operator*=(const Vec3& v);
 	inline Vec3& operator/=(const Vec3& v);
 
 	inline Vec3& operator*=(const float t);
-	inline Vec3& operator/=(const float t);
+	inline Vec3& operator/=(const float t) {
+		elem[0] /= t; elem[1] /= t; elem[2] /= t;
+		return *this;
+	}
 
 	inline float Length()const {
 		return sqrt(
@@ -54,7 +63,7 @@ public:
 };
 
 bool operator<(Vec3 left, Vec3 right)
-{	
+{
 	return left.x() < right.x();
 }
 

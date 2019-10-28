@@ -6,25 +6,15 @@
 #include "ray.hpp"
 #include"sphere.hpp"
 #include"Object_List.hpp"
+#include <random>
+#include"camera.hpp"
 
-float HitSphere(const Vec3& center, float radius, const Ray&r) {
-	Vec3 oc = r.Origin() - center;
-	float a = Dot(r.Direction(), r.Direction());
-	float b = 2.0 * Dot(oc, r.Direction());
-	float c = Dot(oc, oc) - radius * radius;
-	float discriminant = b * b - 4 * a*c;
-
-	if (discriminant < 0) { return -1.0; }
-	else {
-		auto x = (-b + sqrt(discriminant)) / (2.0*a);;
-		return (-b - sqrt(discriminant)) / (2.0*a);
-	}
-
-}
 
 class Utilities {
 public:
-	static void Main(int& nx, int&ny, std::ofstream& my_file) {
+	static void Main(int& nx, int&ny, int&ns, std::ofstream& my_file) {
+		RandomInSphere();
+		std::cout << "begin\n";
 		std::cout << "P3\n" << nx << " " << ny << "\n255\n";
 		my_file << "P3\n" << nx << " " << ny << "\n255\n";
 
@@ -39,27 +29,24 @@ public:
 		list.emplace_back(std::make_unique<Sphere>(Vec3(0, -100.5, -1), 100));
 		std::unique_ptr<Object>world{ std::make_unique<ObjectList>(
 			std::move(list)) };
-		//FillWorld(list);
+		Camera cam;
 
 		//for (int j = 0; j <ny; ++j) {
 		for (int j = ny - 1; j > 0; --j) {
 			for (int i = 0; i < nx; ++i) {
+				Vec3  col;
+				for (int s = 0; s < ns; ++s) {
+					float u = static_cast<float>(i) / static_cast<float>(nx);
+					float v = static_cast<float>(j) / static_cast<float>(ny);
 
-
-				float u = static_cast<float>(i) / static_cast<float>(nx);
-				float v = static_cast<float>(j) / static_cast<float>(ny);
-
-				Ray r
-				(origin,
-					UnitVector
-					(lower_left_corner +
-					((horizontal*u) + (vertical*v))));
-
-				Vec3 col = Color(r, world);
-				//Vec3 col{ 1,1,1 };
-				int ir = static_cast<int>(Kval*col[0]);
-				int ig = static_cast<int>(Kval*col[1]);
-				int ib = static_cast<int>(Kval*col[2]);
+					auto r = cam.GetRay(u, v);
+					col += Color(r, world);
+					//Vec3 col{ 1,1,1 };
+				}
+			col/=ns;
+				int ir = static_cast<int>(Kval*std::sqrt(col[0]));
+				int ig = static_cast<int>(Kval*std::sqrt(col[1]));
+				int ib = static_cast<int>(Kval*std::sqrt(col[2]));
 				my_file << ir << " " << ig << " " << ib << "\n";
 			}
 		}
@@ -68,15 +55,41 @@ public:
 	static Vec3 Color(const Ray&r, std::unique_ptr<Object>&world) {
 		HitData record;
 		if (world->Hit(r, 0.0, FLT_MAX, record)) {
-			return 0.5*Vec3(
-				record.normal.x() + 1,
-				record.normal.y() + 1,
-				record.normal.z() + 1);
+			Vec3 target =
+				record.point +
+				record.normal +
+				GenerateRandomInSphere();
+			Ray new_ray(record.point, target - record.point);
+			return 0.5*Color(new_ray, world);
 		}
 		Vec3 unit_direction = UnitVector(r.Direction());
 		float t = 0.5* (unit_direction.y() + 1.0);
 		return (1.0 - t)*Vec3(1.0, 1.0, 1.0) + t * Vec3(0.5, 0.7, 1.0);
 	}
+
+	static Vec3 GenerateRandomInSphere() {
+		Vec3 point;
+		while (true) {
+			if (Dot(point, point) >= 1.0) break;
+			auto data = RandomInSphere();
+			point = 2.0 *
+				Vec3(data.x(), data.y(), data.z()) -
+				Vec3(1, 1, 1);
+		}
+		return point;
+	}
+
+	static Vec3 RandomInSphere() {
+		std::random_device rd;
+		std::mt19937 rng(rd());
+		std::uniform_real_distribution<float>randData(0, 1);
+		auto x = randData(rng);
+		auto y = randData(rng);
+		auto z = randData(rng);
+
+		return Vec3{ x,y,z };
+	}
+
 };
 
 int main() {
@@ -84,35 +97,11 @@ int main() {
 	myfile.open("test.ppm");
 	int nx = 200;
 	int ny = 100;
-	Utilities::Main(nx, ny, myfile);
+	int ns = 100;
+	Utilities::Main(nx, ny, ns, myfile);
 
 
 	//system("pause");
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,15 +1,13 @@
 #pragma once
-#ifndef SPHEREH
-#define SPHEREH
 
 #include"object.hpp"
 #include"vec3.hpp"
 #include<functional>
 
-class Sphere :public Object {
+class Cone :public Object {
 public:
-	Sphere() { ; }
-	Sphere(Vec3 c, float r) :center{ c }, radius{ r } {; }
+	Cone() { ; }
+	Cone(Vec3 c, float r) :center{ c }, radius{ r } {; }
 	virtual bool Hit(const Ray&r, float t_min,
 		float t_max, HitData& records)const;
 
@@ -18,7 +16,7 @@ public:
 	float radius;
 };
 
-bool Sphere::Hit(const Ray&r,
+bool Cone::Hit(const Ray&r,
 	float t_min, float t_max, HitData& records)const {
 	Vec3 oc = r.Origin() - center;
 	float a = Dot(r.Direction(), r.Direction());
@@ -35,27 +33,25 @@ bool Sphere::Hit(const Ray&r,
 			check = [&r, &t_min, &t_max,
 			&records, this, &negative_root](const float& root) {
 			if (root<t_max && root>t_min) {
-				records.t = root;
-				records.point = r.Point_At_Parameter(records.t);
-				records.normal = ((records.point - center) / radius);
-
-				//records.normal = UnitVector(records.p - center);
+				if (!negative_root) {
+					records.t = root;
+					records.point = r.Point_At_Parameter(records.t);
+					records.normal = UnitVector((records.point - center));
+					negative_root = true;
+				}
 				return true;
 			}
 			return false;
 		};
 
 		//float root = (-b - std::sqrt(discriminant)) / (a);
-		float root = (-b - std::sqrt(discriminant)) / (a);
+		float root = (-b + std::sqrt(discriminant)) / (a);
 		if (check(root))return true;
 		//return false;
 		else {
-			root = (-b + std::sqrt(discriminant)) / (a);
+			root = (-b - std::sqrt(discriminant)) / (a);
 			return check(root);
 		}
 
 	}
 }
-
-
-#endif

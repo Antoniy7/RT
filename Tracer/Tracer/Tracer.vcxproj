@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="camera.hpp" />
+    <ClInclude Include="cone.hpp" />
     <ClInclude Include="object.hpp" />
     <ClInclude Include="Object_List.hpp" />
     <ClInclude Include="ray.hpp" />

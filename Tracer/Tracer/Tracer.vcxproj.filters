@@ -33,6 +33,9 @@
     <ClInclude Include="camera.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cone.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vec3.cpp">

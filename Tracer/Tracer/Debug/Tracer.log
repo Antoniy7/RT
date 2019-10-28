@@ -1,33 +1,90 @@
 ﻿  main.cpp
-i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(37): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(50): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-i:\windows 10\clonning and shit\rt\tracer\tracer\object_list.hpp(25): warning C4018: '<': signed/unsigned mismatch
-i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(21): warning C4305: 'initializing': truncation from 'double' to 'float'
-i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(46): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(66): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(67): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-  i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(28): note: see reference to function template instantiation 'std::unique_ptr<Sphere,std::default_delete<_Ty>> std::make_unique<Sphere,Vec3,double,0>(Vec3 &&,double &&)' being compiled
-          with
-          [
-              _Ty=Sphere
-          ]
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\object_list.hpp(30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\cone.hpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\cone.hpp(53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(22): warning C4305: 'initializing': truncation from 'double' to 'float'
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(88): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(89): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(90): warning C4305: 'argument': truncation from 'double' to 'float'
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(96): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(97): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(97): warning C4305: 'argument': truncation from 'double' to 'float'
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(109): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(110): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(110): warning C4305: 'argument': truncation from 'double' to 'float'
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(136): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(137): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(137): warning C4305: 'argument': truncation from 'double' to 'float'
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(152): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(153): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(153): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\type_traits(16707566): warning C4244: 'argument': conversion from '_Ty' to 'const float', possible loss of data
           with
           [
               _Ty=int
           ]
-  i:\windows 10\clonning and shit\rt\tracer\tracer\main.cpp(29): note: see reference to function template instantiation 'std::unique_ptr<Sphere,std::default_delete<_Ty>> std::make_unique<Sphere,Vec3,int,0>(Vec3 &&,int &&)' being compiled
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\type_traits(16707566): note: see reference to function template instantiation 'bool std::_Invoker_functor::_Call<_Fx&,_Ty>(_Callable,_Ty &&) noexcept(false)' being compiled
           with
           [
-              _Ty=Sphere
+              _Fx=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>,
+              _Ty=int,
+              _Callable=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea> &
           ]
-i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(54): warning C4715: 'Sphere::Hit': not all control paths return a value
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\type_traits(15732480): note: see reference to function template instantiation 'bool std::invoke<_Fx&,int>(_Callable,int &&) noexcept(false)' being compiled
+          with
+          [
+              _Fx=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>,
+              _Callable=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea> &
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\functional(16707566): note: see reference to function template instantiation '_Rx std::_Invoker_ret<_Rx,false>::_Call<_Callable&,_Ty>(_Callable &,_Ty &&)' being compiled
+          with
+          [
+              _Rx=bool,
+              _Callable=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>,
+              _Ty=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\functional(16707566): note: see reference to function template instantiation '_Rx std::_Invoker_ret<_Rx,false>::_Call<_Callable&,_Ty>(_Callable &,_Ty &&)' being compiled
+          with
+          [
+              _Rx=bool,
+              _Callable=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>,
+              _Ty=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\functional(15732480): note: while compiling class template member function '_Rx std::_Func_impl_no_alloc<Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>,_Rx,int>::_Do_call(int &&)'
+          with
+          [
+              _Rx=bool
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\functional(1061): note: see reference to class template instantiation 'std::_Func_impl_no_alloc<Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>,_Ret,int>' being compiled
+          with
+          [
+              _Ret=bool
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\functional(1313): note: see reference to class template instantiation 'std::_Is_large<_Impl>' being compiled
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\functional(1502): note: see reference to function template instantiation 'void std::_Func_class<_Ret,int>::_Reset<Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>>(_Fx &&)' being compiled
+          with
+          [
+              _Ret=bool,
+              _Fx=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\functional(1502): note: see reference to function template instantiation 'void std::_Func_class<_Ret,int>::_Reset<Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>>(_Fx &&)' being compiled
+          with
+          [
+              _Ret=bool,
+              _Fx=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>
+          ]
+  i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(46): note: see reference to function template instantiation 'std::function<bool (int)>::function<Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>,void>(_Fx)' being compiled
+          with
+          [
+              _Fx=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>
+          ]
+  i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(46): note: see reference to function template instantiation 'std::function<bool (int)>::function<Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>,void>(_Fx)' being compiled
+          with
+          [
+              _Fx=Sphere::Hit::<lambda_757075e764cc56cce6061cc580f225ea>
+          ]
+i:\windows 10\clonning and shit\rt\tracer\tracer\cone.hpp(57): warning C4715: 'Cone::Hit': not all control paths return a value
+i:\windows 10\clonning and shit\rt\tracer\tracer\sphere.hpp(58): warning C4715: 'Sphere::Hit': not all control paths return a value
   Tracer.vcxproj -> I:\windows 10\clonning and shit\RT\Tracer\Debug\Tracer.exe
